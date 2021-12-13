@@ -1,6 +1,6 @@
 .PHONY: setup_state_bucket check_tenant check_environment
 
-prepare_base_infra:
+setup_base_infra:
 	cd ./base-infra/my-vpc && \
 	terraform init && \
 	terraform plan -out=terraform.tfplan && \
