@@ -1,16 +1,9 @@
-.PHONY: setup_state_bucket check_tenant check_environment
-
-setup_base_infra:
+prepare_base_infra:
 	cd ./base-infra/my-vpc && \
-	terraform init && \
-	terraform plan -out=terraform.tfplan && \
-	terraform apply terraform.tfplan
+	terraform init -reconfigure && \
+	terraform plan -out=terraform.tfplan
 
-check_environment:
-ifndef environment
-	$(error environment is undefined)
-endif
-check_tenant:
-ifndef tenant
-	$(error tenant is undefined)
-endif
+apply_base_infra:
+	cd ./base-infra/my-vpc && \
+	terraform init -reconfigure && \
+	terraform apply terraform.tfplan
