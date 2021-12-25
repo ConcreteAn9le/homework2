@@ -1,2 +1,4 @@
 .idea
 base-infra/my-vpc/.terraform
+# MacOS
+.DS_Store
