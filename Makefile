@@ -7,3 +7,4 @@ apply_base_infra:
 	cd ./base-infra/my-vpc && \
 	terraform init && \
 	terraform apply terraform.tfplan
+
